@@ -1,0 +1,45 @@
+entity Reservation {
+	id Long
+}
+
+entity Joueur {
+	prenom String,
+	nom String,
+	login String
+}
+
+entity Court {
+	numero Terrain
+}
+
+entity Horaire {
+	jour Instant
+}
+
+enum Terrain {
+    TROIS, QUATRE, CINQ
+}
+
+relationship OneToOne {
+	Reservation{court} to Court
+}
+
+relationship OneToOne {
+	Reservation{joueur} to Joueur
+}
+
+relationship OneToOne {
+	Reservation{horaire} to Horaire
+}
+
+relationship ManyToOne {
+	Joueur{reservation} to Reservation
+}
+
+relationship ManyToOne {
+	Court{reservation} to Court
+}
+
+relationship OneToOne {
+	Horaire{reservation} to Reservation
+}
