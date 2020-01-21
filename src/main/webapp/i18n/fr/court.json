@@ -1,0 +1,23 @@
+{
+  "tennisApp": {
+    "court": {
+      "home": {
+        "title": "Courts",
+        "createLabel": "Créer un nouveau Court",
+        "createOrEditLabel": "Créer ou éditer un Court",
+        "notFound": "Aucun Court trouvé"
+      },
+      "created": "Un nouveau Court a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Court avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Court avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Court {{ id }} ?"
+      },
+      "detail": {
+        "title": "Court"
+      },
+      "numero": "Numero",
+      "reservation": "Reservation"
+    }
+  }
+}
