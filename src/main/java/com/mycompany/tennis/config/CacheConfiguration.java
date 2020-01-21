@@ -42,6 +42,10 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.tennis.domain.User.class.getName());
             createCache(cm, com.mycompany.tennis.domain.Authority.class.getName());
             createCache(cm, com.mycompany.tennis.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mycompany.tennis.domain.Reservation.class.getName());
+            createCache(cm, com.mycompany.tennis.domain.Joueur.class.getName());
+            createCache(cm, com.mycompany.tennis.domain.Court.class.getName());
+            createCache(cm, com.mycompany.tennis.domain.Horaire.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

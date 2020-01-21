@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="reservation">
+            <h2><span jhiTranslate="tennisApp.reservation.detail.title">Reservation</span> {{reservation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tennisApp.reservation.court">Court</span></dt>
+                <dd>
+                    <div *ngIf="reservation.court">
+                        <a [routerLink]="['/court', reservation.court?.id, 'view']">{{reservation.court?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tennisApp.reservation.joueur">Joueur</span></dt>
+                <dd>
+                    <div *ngIf="reservation.joueur">
+                        <a [routerLink]="['/joueur', reservation.joueur?.id, 'view']">{{reservation.joueur?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tennisApp.reservation.horaire">Horaire</span></dt>
+                <dd>
+                    <div *ngIf="reservation.horaire">
+                        <a [routerLink]="['/horaire', reservation.horaire?.id, 'view']">{{reservation.horaire?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/reservation', reservation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
