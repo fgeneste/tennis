@@ -1,0 +1,61 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="tennisApp.horaire.home.title">Horaires</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-horaire" [routerLink]="['/horaire/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="tennisApp.horaire.home.createLabel">
+            Create a new Horaire
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="horaires?.length === 0">
+        <span jhiTranslate="tennisApp.horaire.home.notFound">No horaires found</span>
+    </div>
+    <div class="table-responsive" *ngIf="horaires?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="tennisApp.horaire.jour">Jour</span></th>
+            <th scope="col" ><span jhiTranslate="tennisApp.horaire.reservation">Reservation</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let horaire of horaires ;trackBy: trackId">
+                <td><a [routerLink]="['/horaire', horaire.id, 'view' ]">{{horaire.id}}</a></td>
+                <td>{{horaire.jour | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="horaire.reservation">
+                        <a [routerLink]="['/reservation', horaire.reservation?.id, 'view' ]" >{{horaire.reservation?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/horaire', horaire.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/horaire', horaire.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(horaire)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

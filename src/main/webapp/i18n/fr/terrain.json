@@ -1,0 +1,10 @@
+{
+  "tennisApp": {
+    "Terrain": {
+      "null": "",
+      "TROIS": "TROIS",
+      "QUATRE": "QUATRE",
+      "CINQ": "CINQ"
+    }
+  }
+}
