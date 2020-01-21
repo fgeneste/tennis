@@ -1,0 +1,29 @@
+{
+    "name": "Horaire",
+    "fields": [
+        {
+            "fieldName": "jour",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "reservation",
+            "otherEntityRelationshipName": "horaire",
+            "relationshipName": "reservation",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200121220133",
+    "entityTableName": "horaire",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

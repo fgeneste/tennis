@@ -1,0 +1,29 @@
+{
+    "name": "Court",
+    "fields": [
+        {
+            "fieldName": "numero",
+            "fieldType": "Terrain",
+            "fieldValues": "TROIS,QUATRE,CINQ"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "court",
+            "otherEntityRelationshipName": "court",
+            "relationshipName": "reservation",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200121220132",
+    "entityTableName": "court",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
